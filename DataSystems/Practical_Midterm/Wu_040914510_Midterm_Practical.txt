@@ -1,0 +1,104 @@
+-- 3. Write a query that displays the number of records in your table --
+select count(*) as 'Number of Records'
+    from flights
+;
+
+-- 4. Write a query that displays the max altitude stored in the table --
+select max(altitude) as 'Max Altitude'
+    from flights
+;
+
+-- 5. Write a query that displays the average speed. --
+select avg(speed) as 'Max Speed'
+    from flights
+;
+
+-- 6. Write a query that displays every callSign along with the maximum speed and altitude reached by each callSign. --
+
+select callsign, max(speed) as 'Max Speed', max(altitude) as 'Max Altitude'
+    from flights
+    group by callsign
+    desc
+;
+
+-- 7. Filter the previous query to display only records with a maximum speed larger than 500 --
+
+select callsign, max(speed) as 'Max Speed', max(altitude) as 'Max Altitude'
+    from flights
+    group by callsign
+    desc
+    having max(speed) > 500
+;
+
+-- 8. Write a query that displays the number of records with an altitude larger than 0 --
+
+select count(*) as 'Number of records with more than 0 Altitude'
+    from flights
+    where altitude > 0
+;
+
+-- 9. Write a query that displays all the records whose Position includes the string 12 --
+
+select *
+    from flights
+    where position like '%12%'
+;
+
+-- 10. Write a query that uses the substring function to display the day of the flights instead of the UTC date --
+select Timestamp, substr(utc,9,2) as 'UTC', Callsign, Position, Altitude, Speed, Direction
+    from flights;
+;
+
+-- 11. Write a query that displays all unique CallSign. List must be sorted in descending order --
+
+select distinct callsign
+    from flights
+    order by callSign
+    desc
+;
+
+-- 13. Write a query that calculates the number of airlines whose IATA code is not defined --
+
+select count(*)
+    from airlines
+    where iata is null
+;
+
+-- 14. Write a query that reports the number of airlines per country. --
+
+select country, count(*)
+    from airlines
+    group by country
+    desc
+;
+
+-- 15. Write a query that reports the number of airlines per country. --
+
+select country, count(*)
+    from airlines
+    group by country
+    asc
+;
+
+-- 16. Write a query that displays the name of all canadian and french airlines --
+
+select name
+    from airlines
+    where (
+      country = "Canada" or country = "France"
+    )
+;
+
+-- 17. Write a query that displays the name of the airline and its country for all airlines whose icao code starts with a R. --
+
+select name, country
+    from airlines
+    where icao like "R%"
+;
+
+-- 18. Write a query that displays the name an airline and its nickname when the nickname includes the string “ISLAND" --
+
+select name, nickname
+    from airlines
+    where nickname like "%ISLAND%"
+;

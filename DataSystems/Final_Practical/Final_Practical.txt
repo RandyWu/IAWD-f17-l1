@@ -1,0 +1,88 @@
+--Write a query that displays the number of records in the table flights.--
+select *
+    from flights;
+
+--How many records do you get?--
+16541
+
+/*Knowing that a flight number is indentified by a unique callsign in the table flights,
+write a query that displays the number of unique flights stored in the table flights? */
+select distinct callsign
+    from flights;
+
+--How many records do you get?--
+5
+
+--Write a query that displays the average speed of each flight callsign?--
+select distinct callsign, avg(speed) as "Average Speed"
+    from flights
+    group by callsign
+;
+
+--What is the maximum average speed displayed by the previous query result?--
+412.7800
+
+--Write a query that display which flight(s) flew at the highest altitude?--
+select callsign, max(altitude)
+    from flights
+    group by callsign
+;
+
+--How many records are displayed by the previous query result?--
+4
+
+--Write a query that displays the name of an airline and its nick name when its IATA exists.--
+select name, nickname
+    from airlines
+    where iata is not null
+;
+
+--Write a query that displays the number of airlines whose name includes the string international.--
+select count(name) as "Number of Airlines"
+    from airlines
+    where name like '%international%'
+;
+
+--How many records do you get? --
+175
+
+--Write a query that displays the name of the airline, its nickname, its country of origin, the callsign of each flight?--
+select airlines.name, airlines.nickname, airlines.country, callsign
+    from flights inner join airlines
+        on flights.icao = airlines.icao
+;
+
+--Write a query that displays the different unique dates and the associated callsign(s)--
+select distinct date , callsign
+    from flights
+    group by date
+;
+
+--How many records do you get?--
+25
+
+--What flight number(s) flew Nov 11, 2017?--
+select distinct flight
+    from flights
+    where date = '2017-11-11'
+;
+
+--Write a query that displays the country  code, the country region, the airline name, the flights icao and the flights flight number of each flight--
+select country.code as "country", country.region as "region", airlines.name "name", flights.icao as "icao", flights.flight as "flight_number"
+    from flights inner join airlines
+        on flights.icao = airlines.icao
+    inner join country
+        on airlines.country = country.name
+;
+
+/*Write a query that displays the name of a country, its year of independance of
+a country when it is not null, its continent, its number of airlines when it is greater than 1*/
+select country.name as "country_name", country.indepyear as "independent_year", country.continent as "continent", count(airlines.name) as "airline_number"
+    from country inner join airlines
+        on country.name = airlines.country
+    group by country.name
+    having indepyear is not null
+    and airline_number > 1
+    order by country_name
+    asc
+;
