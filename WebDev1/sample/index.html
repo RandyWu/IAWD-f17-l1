@@ -1,0 +1,76 @@
+<html>
+<body>
+    <head>
+        <title>Lab8</title>
+    </head>
+
+    <h1>Working with Forms</h1>
+
+    <h3 id="greeting"></h3>
+
+    <form name="profileForm">
+        <table>
+        <tr>
+            <td>FirstName:</td>
+            <td>
+                <input type="text" name="firstName" id="firstName">
+                <span id="fnameWarning" class="alert"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>LastName:</td>
+            <td>
+                <input type="text" name="lastName" id="lastName">
+                <span id="lnameWarning" class="alert"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Check if full-time</td>
+            <td><input type="checkbox" name="status" id="status" value="full-time"></td>
+        </tr>
+        <tr>
+                <td>Country:</td>
+            <td>
+                <input type="radio" name="country" value="Canada">Canada
+                <input type="radio" name="country" value="Other">Other
+            </td>
+        </tr>
+        <tr>
+            <td>Campus:</td>
+            <td><select name="campus" id="campus">
+                <option value="Ottawa">Ottawa</option>
+                <option value="Pembroke">Pembrook</option>
+                <option value="Perth">Perth</option>
+                </select>
+            </td>
+        </tr>
+            <tr>
+            <td>Courses:</td>
+            <td><select multiple="multiple" name="courses" id="courses">
+                <option value="CST8209">CST8209</option>
+                <option value="NET0001">DAT0001</option>
+                <option value="CST8260">CST8260</option>
+                <option value="CST8260">MAT8001</option>
+                <option value="CST8260">DAT8200</option>
+                </select><span id="courseWarning" class="alert"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Comment:</td>
+            <td>
+                <textarea rows="4" columns="50" maxlength="200" name="comment"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="reset" value="Reset" name="resetBtn"></td>
+            <td><input type="submit" value="Submit" name="submitBtn"></td>
+        </tr>
+        </table>
+    </form>
+
+    <link href="script/profile.css" rel="stylesheet" type="text/css">
+    <script src="script/validation.js"></script>
+    <script src="script/events.js"></script>
+</body>
+</html>

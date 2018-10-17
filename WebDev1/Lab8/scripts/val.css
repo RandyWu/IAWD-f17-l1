@@ -1,0 +1,22 @@
+.alert{
+    color: red;
+}
+
+input[type=text] {
+  display: inline-block;
+  border: 2px solid;
+}
+
+input[type=text], select {
+  padding-top: 2px;
+}
+
+table {
+    justify-content: center;
+    background-color: #D7D7D7;
+    color: #000;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+}

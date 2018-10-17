@@ -1,0 +1,53 @@
+Web Programming Week 5:
+
+declaring a function in javascrit:
+
+function functionName (arguments) {
+    code block;
+}
+
+arguments are just placeholder names.
+
+<example>
+function addition(x,y){
+    return x + y
+}
+
+function fullName (str1, str2) {
+    console.log(str1 + " " + str2);
+}
+</example>
+
+functions are not run until they are called. So to run addition you need to call it:
+<example> {
+addition(1,2)
+</example>
+
+It is the best practice to define a function before you use it. As java reads everything top down.
+
+void functions - a function that doesn't return anything. The fullName function above is a void function.
+
+A non void function would be the addition function above.
+
+Variables declared inside a function are scoped to the function.
+<example>
+var foo = 1
+console.log(foo)      //Will show 1
+function hello () {
+    foo = 2;
+    console.log(foo); //Will show 2
+}
+console.log(foo)      //Will show 1
+</example>
+
+
+You can also declare functions as variables.
+<example>
+var sum = function(x,y){
+    return x + y
+}
+
+var result = sum(10,5);
+
+console.dir('The sum of 10 and 5 is `${result}`')    //The `${}` is just a formatter. You have to use ` ` and then ${} in between
+</example>
