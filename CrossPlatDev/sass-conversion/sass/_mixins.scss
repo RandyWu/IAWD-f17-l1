@@ -1,0 +1,16 @@
+// -- Equal Spaced Columns -- 
+// Number of Columns - First Column
+// Remaining Number of Columns * Margin Spacing
+// Container Width - Total Margin Spacing
+// Remaining Width / Total Number of Columns
+
+@mixin equalSpaced( $num_of_cols, $gutter, $width:100%  ){
+  width: ( $width - ( $gutter * ($num_of_cols - 1) ) ) / $num_of_cols;
+  margin-left: $gutter;
+  float: left;
+  // Remove Spacing from First Child
+  &:first-child{
+    margin-left: 0;
+  }
+  
+}

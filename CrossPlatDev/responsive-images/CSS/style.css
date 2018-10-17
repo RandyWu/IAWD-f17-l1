@@ -1,0 +1,52 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #FFED4C;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    float: left;
+    width: 100;
+}
+
+h1{
+    font-size: 4rem;
+    font-family: 'Libre Baskerville', Palatino, serif; 
+    padding: 1rem 2rem;
+}
+
+img, picture {
+    width: 90%;
+    margin: 3%;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+img:hover {
+    transform: scale(1.10, 1.10);
+}
+
+@media screen and (min-width: 600px) /* Ask Justin about inclusivity with min width, and conditionals */ {
+    li {
+        width: 50%;
+        /* 2 columns */
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    li {
+        width: 25%;
+        /* 4 columns */
+    }
+}
+
+
+
+
+

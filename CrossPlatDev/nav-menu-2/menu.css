@@ -1,0 +1,105 @@
+/***************************************************
+Add your Google Fonts
+Update ALL the named colours to create a monochromatic scheme
+Style the menus - one horizontally and one vertically
+Add the hover/active effects to your menu items
+***************************************************/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+    line-height: 1.6;
+    /* ADD the Google sans-serif font to this font stack */
+    font-family: 'Poppins', arial, sans-serif;
+}
+html, body{
+    background-color: #FFED4C;
+}
+h1{
+    font-size: 6.854rem;
+    /* ADD the Google serif font to this font stack */
+    font-family: 'Libre Baskerville', Palatino, serif; 
+    padding: 1rem 2rem;
+}
+h2{
+    font-size: 4.23rem;
+    /* ADD the Google serif font to this font stack */
+    font-family: 'Libre Baskerville', Palatino, serif;
+    padding: 1rem 2rem;
+}
+nav li{
+    font-size: 2.618rem;
+}
+p{
+    font-size: 1.618rem;
+    padding: 1rem 2rem;
+}
+.wrapper{
+    max-width: 1400px; 
+    width: 80%;
+    margin: 0 auto;
+    background-color: #7F7626;
+    color: #FFE500;
+}
+header{
+    border-bottom: 0.8rem solid #FFE500;
+    background-color: #CCB700;
+    color: #7F7626;
+}
+.menu-h{
+    width: 100%;
+    text-align: center;
+}
+    .menu-h li{
+        display: inline;
+        list-style-type: none;
+        width: 20%;
+        text-align: center;
+        float: left;
+        /* style the list items to remove the bullets 
+        and line up horizontally
+        and take up 20% of the width of the ul */
+    }
+        .menu-h a,
+        .menu-h a:link,
+        .menu-h a:visited{
+            color: purple;
+            padding: 10px;
+            /* style the anchors to fill the entire width of the li 
+            make sure there is padding around your text */
+        }
+        .menu-h a:hover,
+        .menu-h a:active{
+            color: black;
+        }
+.menu-v{
+    width: 20%;
+    float:left;
+}
+    .menu-v li{
+        display: block;
+        list-style-type: none;
+        width: 100%;
+        padding: 10px;
+    }
+        .menu-v a,
+        .menu-v a:link,
+        .menu-v a:visited{
+            display: block;
+            color: purple;
+            /* style the anchors to fill the entire width of the li */
+        }
+        .menu-v a:hover,
+        .menu-v a:active{
+            color: white;
+        }
+main{
+    width:80%;
+    float: right;
+}
+footer{
+    clear:both;
+}

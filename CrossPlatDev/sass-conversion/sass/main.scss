@@ -1,0 +1,298 @@
+/***********************************************
+                NOTES
+light blue  #C7F7FF
+med blue    #89C0C9
+dark blue   #3a5E63
+light brown #C9A689
+dark brown  #7C593C
+light grey  #d4d4d4
+dark grey   #222
+
+                DEFAULTS
+***********************************************/
+
+@import "variables"; //when importing, name the partial WITHOUT the underscore
+@import "mixins";
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:after,
+*:before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 16px;
+    font-family: $font-sans-serif;
+    /* default for whole page */
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $font-serif;
+    /* serif for the headings */
+}
+
+ul {
+    list-style: none;
+}
+
+/***********************************************
+                SPECIAL
+***********************************************/
+
+.clearfix:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+/***********************************************
+                LAYOUT
+***********************************************/
+
+.bg-header {
+    //background-color: $color-white;
+    background-color: $color-light-blue;
+    color: $color-dark-grey;
+    border-bottom: 1rem solid $color-med-blue;
+    border-top: 1rem solid $color-dark-blue;
+    position: relative;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -1rem;
+        width: 30%;
+        height: 1rem;
+        background-color: $color-dark-blue;
+    }
+    &:before {
+        left: 0;
+    }
+    &:after {
+        right: 0;
+    }
+}
+
+
+.bg-focal {
+    background-color: $color-light-brown;
+    color: $color-dark-brown;
+}
+
+.bg-content1 {
+    background-color: $color-white;
+    color: $color-dark-grey;
+}
+
+.bg-content2 {
+    background-color: $color-light-blue;
+    color: $color-dark-blue;
+}
+
+.bg-footer {
+    background-color: $color-white;
+    color: $color-light-grey;
+}
+
+header {
+    width: 400px;
+    /* default */
+    margin: 0 auto;
+    position: relative;
+}
+
+header h1 {
+    width: 100%;
+    padding: 0 2rem;
+}
+
+header nav {
+    width: 100%;
+}
+
+header nav > ul li {
+    width: 100%;
+    float: none;
+}
+
+section.focal {
+    width: 400px;
+    /* default */
+    margin: 0 auto;
+}
+
+section.content1 {
+    padding: 2rem 0;
+}
+
+section.content2 {
+    padding: 2rem 0;
+}
+
+.row {
+    clear: both;
+}
+
+.col-2 {
+    width: 50%;
+    float: left;
+    padding-bottom: 2rem;
+    border-left: 1px solid $color-dark-blue;
+    margin-bottom: 2rem;
+}
+
+footer .col-2:first-child {
+    border-left: 0;
+}
+
+footer {
+    padding: 2rem 0;
+}
+
+footer p:last-child {}
+
+/***********************************************
+                NAVIGATION
+***********************************************/
+
+header nav {
+    @extend .row;
+    padding: 2rem 0;
+}
+
+header nav > ul > li > a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $color-dark-grey;
+    font-size: 1.414rem;
+    letter-spacing: 0.25rem;
+    border: 1px solid $color-light-grey;
+    border-bottom: none;
+    padding: 1.0rem 2rem;
+    line-height: 1;
+    background-color: $color-white;
+}
+
+header nav > ul > li > a:hover {
+    x-weight: 700;
+    color: $color-dark-brown;
+}
+
+/***********************************************
+                CONTENT
+***********************************************/
+
+header h1 {
+    color: $color-dark-brown;
+    letter-spacing: 0.1rem;
+}
+
+header h1 i.fa-lg {
+    display: block;
+    width: 25%;
+    float: left;
+    font-size: 7rem;
+    line-height: 12.7936rem;
+    color: $color-light-brown;
+}
+
+header h1 i.fa-lg ~ span {
+    float: right;
+    width: 75%;
+    font-size: 3.998rem;
+    /**
+    2 lines of 3.998 * 1.6 = 12.7936
+    **/
+    padding-left: 1rem;
+    text-align: right;
+}
+
+.focal h2 {
+    font-size: 1.999rem;
+    line-height: 1.2;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.focal .author {
+    font-size: 1rem;
+    padding: 0.2rem 2rem 2rem;
+}
+
+.content1 h3 {
+    font-size: 1.999rem;
+    padding: 0.2rem 2rem 2rem;
+}
+
+.content1 h3 i {
+    vertical-align: middle;
+    padding-right: 2rem;
+}
+
+.content1 p {
+    font-size: 1.414rem;
+    padding: 0.5rem 2rem 2rem;
+}
+
+.content2 h3 {
+    font-size: 1.999rem;
+    padding: 1rem 2rem 0.5rem;
+}
+
+.content2 h4 {
+    font-size: 1.999rem;
+    padding: 1rem 2rem 0rem;
+}
+
+.content2 p {
+    font-size: 1.414rem;
+    padding: 0.5rem 2rem 1rem;
+}
+
+.content2 li {
+    padding: 0.5rem 2rem;
+    font-size: 1.414rem;
+}
+
+/***********************************************
+                FOOTER
+***********************************************/
+
+footer h4 {
+    font-size: 1.414rem;
+    padding: 0.5rem 2rem;
+    color: $color-dark-brown;
+}
+
+footer p {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    color: $color-dark-grey;
+}
+
+footer .fa-circle {
+    color: $color-dark-grey;
+}
+
+footer h4[lang=de] {
+    display: block;
+}
+
+footer h4[lang=en],
+footer h4[lang=ar],
+footer h4[lang=ru] {
+    display: none;
+}
+
+@import "queries";
